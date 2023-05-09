@@ -1,7 +1,7 @@
-import ArticleInfo from "../types/ArticleInfo";
-import ResBody from "../types/ResBody";
+import ArticleInfo from "@/types/ArticleInfo";
+import ResBody from "@/types/ResBody";
 import Router from "koa-router"
-import ArticleCate from "../types/ArticleCate";
+import ArticleCate from "@/types/ArticleCate";
 
 const router = new Router()
 

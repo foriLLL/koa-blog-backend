@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { aboutAddr } from '../config';
+import { aboutAddr } from '@/config';
 
 const getAboutString:()=>Promise<string> = async () => {
     return new Promise((resolve, reject) => {

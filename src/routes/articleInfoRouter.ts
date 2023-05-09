@@ -1,7 +1,7 @@
-import ArticleInfo from "../types/ArticleInfo";
-import ResBody from "../types/ResBody";
+import ArticleInfo from "@/types/ArticleInfo";
+import ResBody from "@/types/ResBody";
 import Router from "koa-router"
-import { blogAddr } from "../config";
+import { getAllArticleInfo } from "@/service/articleInfoService";
 
 const router = new Router()
 
@@ -9,7 +9,7 @@ router.get('/', async (ctx) => {
     
     const res: ResBody<Array<ArticleInfo>> = {
         ifSuccessful: true,
-        data: []
+        data: await getAllArticleInfo()
     }
     ctx.body = res
 })

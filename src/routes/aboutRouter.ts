@@ -1,8 +1,8 @@
-import ResBody from "../types/ResBody";
+import ResBody from "@/types/ResBody";
 import Router from "koa-router"
-import Article from "../types/Article";
-import About from "../types/About";
-import { getAboutString } from "../service/aboutService";
+import Article from "@/types/Article";
+import About from "@/types/About";
+import { getAboutString } from "@/service/aboutService";
 
 const router = new Router()
 
