@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "nodemon",
-    "build": "npx babel src --out-dir build --extensions \".ts\""
+    "build": "tsc && npx tsc-alias"
   },
   "keywords": [],
   "author": "",
@@ -17,12 +17,9 @@
     "koa-router": "^7.4.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.20.7",
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.18.6",
     "@types/koa-router": "^7.4.4",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.6",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^4.9.5"
   }
