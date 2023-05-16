@@ -1,3 +1,3 @@
-export default interface About{
+export default interface About {
   content: string
 }

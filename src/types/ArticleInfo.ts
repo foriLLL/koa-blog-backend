@@ -1,3 +1,3 @@
 export default interface ArticleInfo {
-  [key: string]: any;
+  [key: string]: string
 }

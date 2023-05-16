@@ -1,5 +1,8 @@
-// todo: 改为读取环境变量，便于之后使用docker
-const blogAddr: string = "/Users/foril/blog-posts/published";
-const aboutAddr: string = "/Users/foril/blog-posts/README.md"
+import path from 'path'
 
-export {blogAddr, aboutAddr};
+// todo: 改为读取环境变量，便于之后使用docker
+const blogRepoAddr = '/Users/foril/blog-posts'
+const blogAddr = path.join(blogRepoAddr, 'published')
+const aboutAddr = path.join(blogRepoAddr, 'README.md')
+
+export { blogAddr, aboutAddr }

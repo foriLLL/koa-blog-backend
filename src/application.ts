@@ -10,10 +10,22 @@ const port = 8080
 
 // 装载所有路由
 
-const subRouter = new Router
-subRouter.use('/articleInfo', articleInfoRouter.routes(), articleInfoRouter.allowedMethods())
-subRouter.use('/articleCate', articleCateRouter.routes(), articleCateRouter.allowedMethods())
-subRouter.use('/article', articleRouter.routes(), articleRouter.allowedMethods())
+const subRouter = new Router()
+subRouter.use(
+  '/articleInfo',
+  articleInfoRouter.routes(),
+  articleInfoRouter.allowedMethods(),
+)
+subRouter.use(
+  '/articleCate',
+  articleCateRouter.routes(),
+  articleCateRouter.allowedMethods(),
+)
+subRouter.use(
+  '/article',
+  articleRouter.routes(),
+  articleRouter.allowedMethods(),
+)
 subRouter.use('/about', aboutRouter.routes(), aboutRouter.allowedMethods())
 
 const router = new Router()
