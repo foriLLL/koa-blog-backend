@@ -1,3 +1,10 @@
 export default interface ArticleInfo {
-  [key: string]: string
+  title: string
+  cateName: string
+  time: string
+  views?: number
+  heroImage?: string
+  description: string
+  userId?: number
+  userName?: string
 }

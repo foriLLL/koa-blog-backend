@@ -8,16 +8,16 @@ const router = new Router()
 router.get('/', async ctx => {
   const res: ResBody<Array<ArticleInfo>> = {
     ifSuccessful: true,
-    data: await getAllArticleInfo(),
+    data: await getAllArticleInfo(''),
   }
   ctx.body = res
 })
 
-router.get('/cateId/:cadeId', async ctx => {
-  // console.log(ctx.params);    // { cadeId: '2' }
+router.get('/:cateName', async ctx => {
+  const { cateName } = ctx.params
   const res: ResBody<Array<ArticleInfo>> = {
     ifSuccessful: true,
-    data: [],
+    data: await getAllArticleInfo(cateName),
   }
   ctx.body = res
 })
