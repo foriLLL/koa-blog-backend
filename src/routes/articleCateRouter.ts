@@ -1,22 +1,14 @@
-import ArticleInfo from '@/types/ArticleInfo'
 import ResBody from '@/types/ResBody'
 import Router from 'koa-router'
 import ArticleCate from '@/types/ArticleCate'
+import { getAllArticleCates } from '@/service/articleCateService'
 
 const router = new Router()
 
-router.get('/articleInfo', async ctx => {
-  const res: ResBody<Array<ArticleInfo>> = {
-    ifSuccessful: true,
-    data: [],
-  }
-  ctx.body = res
-})
-
 router.get('/', async ctx => {
-  const res: ResBody<Array<ArticleCate>> = {
+  const res: ResBody<ArticleCate[]> = {
     ifSuccessful: true,
-    data: [],
+    data: await getAllArticleCates(),
   }
   ctx.body = res
 })

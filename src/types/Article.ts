@@ -1,6 +1,6 @@
 export default interface Article {
   title: string
-  cateId: number
+  cateName: string
   time: string
   views?: number
   heroImage?: string

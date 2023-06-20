@@ -6,7 +6,7 @@ import { getAllArticleInfo } from '@/service/articleInfoService'
 const router = new Router()
 
 router.get('/', async ctx => {
-  const res: ResBody<Array<ArticleInfo>> = {
+  const res: ResBody<ArticleInfo[]> = {
     ifSuccessful: true,
     data: await getAllArticleInfo(''),
   }
@@ -15,7 +15,7 @@ router.get('/', async ctx => {
 
 router.get('/:cateName', async ctx => {
   const { cateName } = ctx.params
-  const res: ResBody<Array<ArticleInfo>> = {
+  const res: ResBody<ArticleInfo[]> = {
     ifSuccessful: true,
     data: await getAllArticleInfo(cateName),
   }
