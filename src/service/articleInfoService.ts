@@ -15,10 +15,11 @@ const getAllArticleInfo: (
     const dataPromises = files.map(async file => {
       const fileContent = await readFile(file)
       const { data } = matter(fileContent)
+      const title = path.basename(file).replace(/\.md$/, '')
 
       // 创建一个新的ArticleInfo对象
       const articleInfo: ArticleInfo = {
-        title: data.title || '标题未指定',
+        title,
         cateName: path.basename(path.dirname(file)),
         time: data.time || '未知',
         heroImage: data.heroImage || '',

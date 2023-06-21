@@ -10,7 +10,6 @@ const getArticle: (
   title: string,
 ) => Promise<Article | undefined> = async (cateName, title) => {
   const articlePath = path.join(blogAddr, cateName, title + '.md')
-  console.log(articlePath)
   if (fs.existsSync(articlePath)) {
     const fileContent = (await readFile(articlePath)).toString()
     const { content, data } = matter(fileContent)
