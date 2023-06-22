@@ -17,7 +17,7 @@ router.get('/:cateName', async ctx => {
   const { cateName } = ctx.params
   const res: ResBody<ArticleInfo[]> = {
     ifSuccessful: true,
-    data: await getAllArticleInfo(cateName),
+    data: await getAllArticleInfo(decodeURIComponent(cateName)),
   }
   ctx.body = res
 })
