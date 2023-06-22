@@ -21,7 +21,7 @@ const getAllArticleInfo: (
       const articleInfo: ArticleInfo = {
         title,
         cateName: path.basename(path.dirname(file)),
-        time: data.time || '未知',
+        time: data.time ? data.time.toString() : '未知',
         heroImage: data.heroImage || '',
         description: data.description || '暂无介绍',
       }
@@ -31,6 +31,16 @@ const getAllArticleInfo: (
 
     // 等待所有的front matter数据都被解析并返回
     const allArticleInfos = await Promise.all(dataPromises)
+    allArticleInfos.sort((a, b) => {
+      if (a.time === '未知' || b.time === '未知') {
+        if (a.time === '未知' && b.time === '未知') {
+          return 0
+        }
+        return a.time === '未知' ? 1 : -1
+      }
+      return a.time > b.time ? -1 : 1
+    })
+
     return allArticleInfos
   } catch (err) {
     console.error(err)
