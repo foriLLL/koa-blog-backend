@@ -38,7 +38,7 @@ const getAllArticleInfo: (
         }
         return a.time === '未知' ? 1 : -1
       }
-      return a.time > b.time ? -1 : 1
+      return new Date(a.time) > new Date(b.time) ? -1 : 1
     })
 
     return allArticleInfos
