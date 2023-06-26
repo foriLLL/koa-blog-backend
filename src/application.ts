@@ -5,6 +5,9 @@ import articleCateRouter from './routes/articleCateRouter'
 import articleRouter from './routes/articleRouter'
 import aboutRouter from './routes/aboutRouter'
 import metaRouter from './routes/metaRouter'
+import serveStatic from 'koa-static'
+import { staticAddr } from './config'
+import mount from 'koa-mount'
 
 const app = new Koa()
 const port = 8080
@@ -52,6 +55,11 @@ router.use('/api', subRouter.routes(), subRouter.allowedMethods())
 
 // 加载路由中间件
 app.use(router.routes()).use(router.allowedMethods())
+
+// koa-static
+const staticMiddleware = serveStatic(staticAddr)
+const mountPath = '/static'
+app.use(mount(mountPath, staticMiddleware))
 
 app.listen(port)
 console.log(`foril-blog backend is starting at port ${port}`)
