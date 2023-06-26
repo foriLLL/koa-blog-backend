@@ -4,7 +4,6 @@ import { blogAddr } from '@/config'
 import path from 'path'
 import matter from 'gray-matter'
 
-// todo: 读取所有文件，获取front matter，提取data并返回
 const getAllArticleInfo: (
   subdir: string,
 ) => Promise<Array<ArticleInfo>> = async (subdir: string) => {

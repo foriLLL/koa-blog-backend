@@ -4,6 +4,7 @@ import articleInfoRouter from './routes/articleInfoRouter'
 import articleCateRouter from './routes/articleCateRouter'
 import articleRouter from './routes/articleRouter'
 import aboutRouter from './routes/aboutRouter'
+import metaRouter from './routes/metaRouter'
 
 const app = new Koa()
 const port = 8080
@@ -40,7 +41,10 @@ subRouter.use(
   articleRouter.routes(),
   articleRouter.allowedMethods(),
 )
+
 subRouter.use('/about', aboutRouter.routes(), aboutRouter.allowedMethods())
+
+subRouter.use('/meta', metaRouter.routes(), metaRouter.allowedMethods())
 
 // 挂载到 /api 路径下
 const router = new Router()
