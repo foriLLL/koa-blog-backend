@@ -1,0 +1,9 @@
+node_modules/
+build/
+.DS_Store
+nodemon.json
+pnpm-lock.yaml
+.editorconfig
+.prettierrf.json
+.eslintrc.json
+*.md
