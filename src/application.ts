@@ -8,9 +8,9 @@ import metaRouter from './routes/metaRouter'
 import serveStatic from 'koa-static'
 import { staticAddr } from './config'
 import mount from 'koa-mount'
+import { port } from './config'
 
 const app = new Koa()
-const port = 8080
 
 app.use(async (ctx, next) => {
   ctx.set('Access-Control-Allow-Origin', '*')
@@ -62,4 +62,4 @@ const mountPath = '/static'
 app.use(mount(mountPath, staticMiddleware))
 
 app.listen(port)
-console.log(`foril-blog backend is starting at port ${port}`)
+console.log(`blog backend is starting at port ${port}`)
