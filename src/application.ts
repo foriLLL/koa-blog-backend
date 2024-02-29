@@ -26,6 +26,12 @@ app.use(async (ctx, next) => {
   }
 })
 
+// 设置缓存过期时间为 10 分钟
+app.use(async (ctx, next) => {
+  ctx.set('Cache-Control', 'max-age=600')
+  await next()
+})
+
 // 装载所有路由
 const subRouter = new Router()
 subRouter.use(
