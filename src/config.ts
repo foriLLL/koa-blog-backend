@@ -1,7 +1,7 @@
 import path from 'path'
 
-const port = process.env.PORT || 8080
-const blogRepoAddr = process.env.BLOG_REPO_ADDR || '/blog-posts'
+const port = process.env.PORT || 8081
+const blogRepoAddr = '/blog-posts'
 const blogAddr = path.join(blogRepoAddr, 'published')
 const aboutAddr = path.join(blogRepoAddr, 'README.md')
 const metaAddr = path.join(blogRepoAddr, 'meta/meta.json')
